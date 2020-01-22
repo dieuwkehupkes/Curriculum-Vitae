@@ -1,0 +1,138 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,roman, linkcolor=false]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{comment}
+
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+
+% \usepackage[hidelinks]{hyperref} % Required for adding links	and customizing them
+% \definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Dieuwke}{Hupkes}
+\address{Dieuwke Hupkes}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#6&%
+  \else{\\%
+    \begin{minipage}{0.75\maincolumnwidth}%
+      \small#6%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}\vspace{1.7mm}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \textit{\begin{minipage}{0.75\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}}\fi%
+  \par\addvspace{#1}\vspace{0mm}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+% set link colour
+% \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+% \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+\makecvtitle
+\vspace*{-20mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faGlobe\enspace dieuwkehupkes.nl & \faEnvelopeO\enspace d.hupkes@uva.nl & \faGithub\enspace dieuwkehupkes &  \faMobile\enspace +31 613679766\\  
+\end{tabular}
+\end{center}
+
+\vspace{3mm}
+\section{Research Statement} 
+
+My main driver for doing research in computational linguistics is that I would like to understand why language is (syntactically) structured the way it is. 
+% TODO mention compositionality in hierarchy
+\emph{Arrive to explanatory modelling somehow?}\\
+
+My research consists of two parallel and intertwined strands.
+First, I consider the abilities of neural networks when it comes to representing and learning hierarchy and structure, a topic that over the past years has received increasing amounts of attention.
+I have done several experiments with controlled, artificial setups \citep{hupkes2018diagnostic,hupkes2019the,hupkes2017symbolic}.
+These studies focus specifically on hierarchy and compositionality, and offer a controlled setup to study these aspects.
+Additionaly, I have investigated \emph{neural language models} that are trained on more noisy naturalistic data.
+These studies considered how such models implement long-distance relationships requiring knowledge of syntactic structure \citep*{giulianelli2018under,jumelet2019analysing,lakretz2019emergence} as well as how they deal with negative polarity items, which requires also semantic knowledge \citep*{jumelet2019anything,jumelet2020language}.
+
+The second strand of my research concerns \emph{interpretability}.
+For neural networks to be useful as explanatory models of language, as well as to improve them, it is important to increase our understanding of their internal dynamics.% \footnote{In fact, the importance of interpretability goes far beyond}
+I co-organised the ACL workshop BlackboxNLP2019, which focussed specifically on this topic and have published several papers in which I use and develop different interpretability techniques.
+More specifically, in 2016, we proposed \emph{Diagnostic Classification} \citep*{veldhoen2016diagnostic,hupkes2018diagnostic}, a technique -- independently also proposed by several others and also known as \emph{probing} -- that is now part of the standard toolkit of interpretability research.
+I proposed different uses of diagnostic classification and applied it to several different problems \citep[i.a.][]{baan2019realization,hupkes2018analysing,lakretz2019emergence,ulmer2019assessing}. 
+In other studies, we used \emph{ablation} \citep{lakretz2019emergence} and \emph{Generalised Contextual Decomposition}.\\
+
+The studies I have conducted indicate that neural networks can implement interesting aspects of compositionality and structure, but at the same time they do not always find the solutions we expect or desire.
+I consider them promising candidates to learn more about human processing of structure, but much work is still to be done.
+Similarly, my work on interpretability shows that it is possible to unravel in quite some detail how neural models implement a particular phenomenon but also clearly illustrates that there are still strong limitations concerning our understanding of neural networks.
+
+In the research I am planning to conduct, I aim to maintain the two strands described before and focus on 
+
+% During my PhD, I have done mostly modelling work. I have focused on understanding more about structure and processing of structure by studying recurrent neural networks. These networks share some interesting properties with the human processing system, and I have investigated how they can process hierarchical structure, both in artificial languages and natural language. I have learned a lot about these models and how they process structure, and now I would like to take the next step: reconnecting these findings with human processing and cognition. 
+
+% I think working in the described project would be an excellent way for me to do so. The goals of the project as I understand them overlap largely with my own research goals, but are approached from a different direction than I did until now. Exactly for this reason, I think I could provide a nice contribution to the project team, bringing in a different kind of experience and knowledge. Inversely, I have very little experience with laboratory experiments and data stemming from such experiments and am eager to work with a PI whose expertise lies in this domain. I hope that together we can really make progress on the question: How does syntax shape cognition?
+
+\bibliography{mypublications}
+
+\end{document}
+

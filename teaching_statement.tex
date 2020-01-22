@@ -1,0 +1,122 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,roman, colorlinks, linkcolor=true]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{comment}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+
+% \usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Dieuwke}{Hupkes}
+\address{Dieuwke Hupkes}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#6&%
+  \else{\\%
+    \begin{minipage}{0.75\maincolumnwidth}%
+      \small#6%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}\vspace{1.7mm}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \textit{\begin{minipage}{0.75\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}}\fi%
+  \par\addvspace{#1}\vspace{0mm}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+% set link colour
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+% \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+\makecvtitle
+\vspace*{-10mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faGlobe\enspace dieuwkehupkes.nl & \faEnvelopeO\enspace d.hupkes@uva.nl & \faGithub\enspace dieuwkehupkes &  \faMobile\enspace +31 613679766\\  
+\end{tabular}
+\end{center}
+
+\vspace{3mm}
+\section{Teaching Statement} 
+
+%TODO ref to teaching experience doc
+
+While I am still at a junior stage of my career, I have been involved already in many different types of teaching activities.
+Since I was a graduate student, I have been a teaching assistant for several different courses in both bachelor and master's programmes.
+In these assistant jobs, I had different types of responsibilities, including supervising computer labs, designing exercises and exams, giving guest lectures and leading discussion groups.
+A few years back, when my PhD advisor dr. Zuidema had to step back for a few weeks, I took over his masters course \emph{Foundations of neural and cognitive modelling}.\\
+
+More recently, I have taken on many supervision duties. 
+I supervised 14 thesis projects of students of the master Artificial Intelligence, several group projects for the same master and I am also co-advising a PhD student supervised by dr.\ Bruni.
+These projects, in which I learned much from my cosupervisors (in particular dr. Zuidema and dr. Bruni), have taught me how to motivate and guide students and how to make them work together in a team.\\
+
+In the coming semester, I will be in charge of two bachelor courses. 
+I will coordinate the course Human(e) AI, consisting of a series of guest lectures; and I will be the main lecturer of the course \emph{Taaltheorie\&Taalverwerking} (Language theory and language processing), an important course in the bachelor AI at the university of Amsterdam, with almost 200 students.
+In this semester, I will also follow the University Teaching Qualification programme (\textbf{bko}), to obtain the teaching certification compulsory for all senior lecturers at Dutch Universities.
+
+In a time where many large companies offer high-paid research positions, teaching and interaction with students are one of the reasons that I prefer working in academia.
+I am looking forward to teaching more, developing my own courses and learning more from more experienced colleagues.
+
+\end{document}
+
